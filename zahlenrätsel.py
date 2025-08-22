@@ -6,7 +6,6 @@ print ("Willkommen beim zahlen Rate Spiel. Hier spielst du gegen den Computer un
 
   # Hier wird immer eine neue Zahl generiert für jede neue Runde.
 zahl = randint (1, 100)
-zahl =1 #Nur test später löschen
 counter = 0
 
 def prüfe_zahl (ich, zahl):
