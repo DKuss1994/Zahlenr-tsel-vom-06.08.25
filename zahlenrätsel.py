@@ -8,7 +8,7 @@ class Zahlenrätsel:
     self.highscore_liste = []
     self.counter = 0
     self.minimum = 1
-    self.maximum = 5
+    self.maximum = 100
     self.pc_zahl = randint(self.minimum, self.maximum)
     self.admincode = "Hallo"
     self.ende = 1
