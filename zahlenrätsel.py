@@ -10,7 +10,7 @@ class Zahlenrätsel:
     self.minimum = 1
     self.maximum = 100
     self.pc_zahl = randint(self.minimum, self.maximum)
-    self.admincode = "Hallo"
+    self.admincode = "Hello World"
     self.ende = 1
   
    # Einfach Json speicherung des Telefonbuches
