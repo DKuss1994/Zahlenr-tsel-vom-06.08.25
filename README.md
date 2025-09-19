@@ -5,10 +5,12 @@ zu erraten.
 
 ## Features
 - Man kommt in den Einstellungsmodus per Code
+- Es gibt eine Fernet funktion, die Zeigt wie eine Verschlüsselung aussieht.
 - Eine Passwortprüfung
 - Highscore 
 - Es gibt eine Json Speicherfunktion
 - Eine Input abfrage die Fehler einfach abfängt vom User
+  
 
 ## Installation
 
