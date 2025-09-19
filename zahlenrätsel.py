@@ -1,16 +1,20 @@
-
+from Passwort_verschlüsseln import PasswortManager
 from random import randint
 import os
 import json
-
+pm = PasswortManager(key_file="Schlüssel", enc_file="Passwort")
+pm.erstelle_key()
+pm.lade_key()
+pm.verschlüssel_password("Hello World")
+password = pm.lade_password()
 class Zahlenrätsel:
-  def __init__(self):
+  def __init__(self,password):
     self.highscore_liste = []
     self.counter = 0
     self.minimum = 1
     self.maximum = 100
     self.pc_zahl = randint(self.minimum, self.maximum)
-    self.admincode = "Hello World"
+    self.admincode = password
     self.ende = 1
   
    # Einfach Json speicherung des Telefonbuches
@@ -188,5 +192,5 @@ class Zahlenrätsel:
 
       
 
-zahlenrätsel=Zahlenrätsel()
+zahlenrätsel=Zahlenrätsel(password)
 zahlenrätsel.start()
