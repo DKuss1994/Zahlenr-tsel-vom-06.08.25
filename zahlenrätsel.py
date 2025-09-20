@@ -72,13 +72,12 @@ class Zahlenrätsel:
     while True:
       self.minimum = self.eingabe("Gib deine niedrigste Ratezahl ein: ",int)
       self.maximum = self.eingabe("Gib die höchste Ratezahl ein: ", int)
-      if self.maximum<=self.minimum:
-        print("Die niedrigste Ratezahl ist größer als die große Ratezahl.")
-        print(f"Niedrigste Zahl: {self.minimum}| Höchste Zahl: {self.maximum}")
+      if self.maximum <= self.minimum:
+        print(f"❌ Ungültiger Bereich: {self.minimum} ≥ {self.maximum}")
         continue
       else:
-        print ("Gib eine Zahl ein!")
-        continue
+        print(f"✅ Neuer Bereich gesetzt: {self.minimum} bis {self.maximum}")
+        break
 
   def admin_einstellung(self):
     while True:
@@ -98,15 +97,18 @@ class Zahlenrätsel:
       
 
   def eingabe(self,frage:str, typ, min_value=None , max_value=None):
-    try:
-      while True:
+    while True:
+      try:
         eingabe = input(frage)
+        # Admincode-Shortcut
         if eingabe == self.admincode:
           self.admin_einstellung()
+          continue
+         # Typumwandlung
         elif typ == int:
           eingabe = int(eingabe)
         elif typ == str:
-          eingabe = str(eingabe)
+          pass # input() liefert bereits str
         elif typ == float:
           eingabe = float(eingabe)
         else:
@@ -118,9 +120,11 @@ class Zahlenrätsel:
         if max_value is not None and eingabe> max_value:
           print(f"❌ Deine Eingabe: {eingabe} ist größer als max_value: {max_value}")
           continue
+         # Alles okay → zurückgeben
         return eingabe
-    except ValueError:
-      print("Bitte benutzt Zahlen")
+      except ValueError:
+        print("Bitte benutzt Zahlen")
+      
    
   def prüfung(self, user_eingabe):
     self.versuche()
