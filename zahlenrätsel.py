@@ -77,6 +77,7 @@ class Zahlenrätsel:
         continue
       else:
         print(f"✅ Neuer Bereich gesetzt: {self.minimum} bis {self.maximum}")
+        self.pc_zahl = randint(self.minimum, self.maximum)
         break
 
   def admin_einstellung(self):
